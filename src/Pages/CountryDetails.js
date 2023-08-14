@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCountryDetail } from '../services/index'
-import './countryDetail.css';
+import "./countryDetails.css"
 
 export default function CountryDetail(props) {
     const { countryCode } = useParams();
@@ -19,7 +19,7 @@ export default function CountryDetail(props) {
     console.log("countryCode: ", countryCode);
     return (
         <div className='country-detail-wrapper'>
-           <div>
+           <div className='country-detail-values'>
             <img src={detail.flags?.png} alt={detail.name}/>
            </div>
            <div>
