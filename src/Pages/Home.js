@@ -66,6 +66,9 @@ function Home() {
     return (
         <div className="App">
           <h1 className='header'>this is the county detail application</h1>
+          
+          <div>
+            </div>
             <div className='filters-wrapper'>
             <TextField
                     id="fullWidth"
@@ -91,13 +94,13 @@ function Home() {
                         <MenuItem value={'Europe'}>Europe</MenuItem>
                         <MenuItem value={'Oceania'}>Oceania</MenuItem>
                     </Select>
+                    
                 </FormControl>
-            </div>
-            <div>
-            <button color="primary"
+                
+            <button className='suggestions-button'
             onClick={routeChange}
               >
-              contact us
+              Give us your suggetions  
             </button>
             </div>
             <div className='country-card-wrapper'>
