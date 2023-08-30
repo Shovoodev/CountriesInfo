@@ -8,12 +8,19 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
     const [allCountriesList, setCountriesList] = useState([]);
     const [filteredCoutriesList, setFilteredCountriesList] = useState([]);
     const [region, setRegion] = useState('');
     const [countryName, setCountryName] = useState('');
+
+    let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path =`/contactUs`; 
+    navigate(path);
+  }
 
     const handleRegionChange = (event) => {
         setRegion(event.target.value);
@@ -58,6 +65,7 @@ function Home() {
 
     return (
         <div className="App">
+          <h1 className='header'>this is the county detail application</h1>
             <div className='filters-wrapper'>
             <TextField
                     id="fullWidth"
@@ -84,6 +92,13 @@ function Home() {
                         <MenuItem value={'Oceania'}>Oceania</MenuItem>
                     </Select>
                 </FormControl>
+            </div>
+            <div>
+            <button color="primary"
+            onClick={routeChange}
+              >
+              contact us
+            </button>
             </div>
             <div className='country-card-wrapper'>
                 {
