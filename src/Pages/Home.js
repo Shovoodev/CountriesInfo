@@ -9,6 +9,7 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/navbar/Navbar';
 
 function Home() {
     const [allCountriesList, setCountriesList] = useState([]);
@@ -16,11 +17,11 @@ function Home() {
     const [region, setRegion] = useState('');
     const [countryName, setCountryName] = useState('');
 
-    let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path =`/contactUs`; 
-    navigate(path);
-  }
+    // let navigate = useNavigate(); 
+//   const routeChange = () =>{ 
+//     let path =`/contactUs`; 
+//     navigate(path);
+//   }
 
     const handleRegionChange = (event) => {
         setRegion(event.target.value);
@@ -64,13 +65,14 @@ function Home() {
     }, [region, allCountriesList, countryName]);
 
     return (
-        <div className="App">
-          <h1 className='header'>this is the county detail application</h1>
-          
+        <div>
           <div>
+          <Navbar/>
             </div>
+            <div>
             <div className='filters-wrapper'>
             <TextField
+            className='mr-4'
                     id="fullWidth"
                     margin="dense"
                     label="Filter by Name"
@@ -97,11 +99,12 @@ function Home() {
                     
                 </FormControl>
                 
-            <button className='suggestions-button'
+            {/* <button className='suggestions-button'
             onClick={routeChange}
               >
               Give us your suggetions  
-            </button>
+            </button> */}
+            </div>
             </div>
             <div className='country-card-wrapper'>
                 {

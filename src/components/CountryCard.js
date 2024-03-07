@@ -6,7 +6,9 @@ import Typography from '@mui/material/Typography';
 
 export default function CountryCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 ,width: 250 }}>
+    <>  
+    <div className='flex items-center text-center'>
+      <Card sx={{ maxWidth: 345 ,width: 250 }}>
       <CardMedia
         component="img"
         alt={props.name}
@@ -22,5 +24,7 @@ export default function CountryCard(props) {
         </Typography>
       </CardContent>
     </Card>
+    </div>
+    </>
   );
 }
